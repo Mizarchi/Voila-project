@@ -1,0 +1,93 @@
+.container3 {
+  display: flex;
+  min-height: 100vh;
+  background-color: #dcdcdc;
+}
+
+.logo {
+  height: 45px;
+}
+
+.vertical-menu {
+  background-color: #ffe0e5;
+  width: 18%;
+}
+
+.app-card {
+  background: white;
+  border-radius: 5px;
+  height: 200px;
+}
+
+.grafic {
+  background-color: #ffe0e5;
+  height: 110px;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.info {
+  height: 89px;
+  width: 90%;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  margin-top: 90px;
+  background: white;
+}
+
+.header1 {
+  display: flex;
+}
+
+.header2 {
+  height: 60px;
+  background-color: #ffe0e5;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dashboard {
+  background: white;
+  width: 85%;
+  height: 60px;
+}
+
+.icon-menu {
+  height: 30px;
+  margin-top: 13px;
+}
+
+.app-container {
+  display: flex;
+}
+
+.app-content {
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 64px 1fr;
+}
+
+.app-route {
+  overflow: auto;
+  background: #efefef;
+  padding: 16px 0;
+}
+
+.list-group-item {
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background:#ffe0e5;
+}
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

@@ -1,0 +1,80 @@
+
+
+
+.container2{
+    display: flex;
+    justify-content: center;
+    background: #ffe0e5;
+    min-height: 100vh;
+}
+
+.card{
+    background-color: white;
+    padding: 20px;
+    height: 50%;
+    width: 20%;
+    margin-top: 100px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.header_m{
+    display: flex;
+    justify-content: space-between
+}
+
+.logo{
+    height: 60px;
+}
+
+.lock2{
+    height: 15px;
+}
+.log_in{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.button{
+    height: 30px;
+    width: 45%;
+    border: 0px;
+    background: #ffe0e5;
+    margin-top: 10px;
+}
+
+.h4{
+
+    font-size: 18px;
+    
+
+}
+
+.p1{
+
+    font-size: 14px;
+}
+
+.p2{
+    margin-right: 30px;
+}
+
+.input{
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: 1px solid #BDC3C7;
+    height: 25px;
+    font-size: 15px;
+    color: #B3B6B7;
+    
+}
+
+
+.final{
+    display: flex;
+    justify-content: center;
+}

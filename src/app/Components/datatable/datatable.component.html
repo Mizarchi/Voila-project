@@ -1,0 +1,19 @@
+
+<div class="app-container">
+    <table id="dataTable" class="display" style="width: 60%;">
+    <thead>
+        <tr>
+            <th *ngFor="let item of data">{{item}}</th>
+        </tr>
+    </thead>
+        <tr *ngFor=" let row of rows">
+            <td *ngFor="let item of data">{{row[item]}}</td>
+        </tr>
+  </table>
+</div>
+
+
+    <div class="button">
+        <button (click)="agregar.emit()" class="btn-agregar">Agregar</button>
+        <button class="btn-eliminar">Eliminar</button>
+    </div>
