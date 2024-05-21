@@ -21,25 +21,31 @@
     border-radius: 5px;
     height: 200px;
     margin-bottom: 20px;
+    position: relative;
+
 }
 
 .grafic{
     background-color: #ffe0e5;
     height: 110px;
-    border-radius: 0px 0px 10px 10px ;
+    border-radius: 5px 5px 5px 5px ;
     display: flex;
     justify-content: center;
 }
 
 .info{
-    height: 89px;
+
+    height: 120px;
     width: 90%;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
-    margin-top: 90px;
+    margin-top: 73px;
+    padding: 10px;
     background: white;
-    
+    position: absolute;
 }
+
+
 
 .header1{
     display:flex;
@@ -82,4 +88,32 @@
     background-color: white;
     margin-bottom: 20px;
     height: 464px;
+}
+
+.icon-card{
+    height: 50px;
+    margin-left: 17px;
+
+}
+
+.info-grafic{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 11px;
+}
+
+.cliente{
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.graficos{
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-graficos{
+    margin-top: 20px;
 }

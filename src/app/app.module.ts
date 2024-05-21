@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { FormulariosComponent } from './Components/formularios/formularios.component';
 import { routes } from './app.routes'; // Importa las rutas definidas en app.routes.ts
 import { DataTableComponent } from './Components/datatable/datatable.component';
 import {PagosComponent} from './Components/pagos/pagos.component';
@@ -18,7 +17,6 @@ import {CitaComponent} from './Components/cita/cita.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
-    FormulariosComponent,
     DataTableComponent,
     DashboardComponent,
     PagosComponent,

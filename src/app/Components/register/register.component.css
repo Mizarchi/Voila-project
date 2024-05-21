@@ -24,7 +24,8 @@
 }
 
 .logo{
-    height: 60px;
+    height: 65px;
+    margin-bottom: 20px;
 }
 
 .lock2{
@@ -32,7 +33,7 @@
 }
 .log_in{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin-top: 20px;
 }
 
@@ -42,11 +43,14 @@
     border: 0px;
     background: #ffe0e5;
     margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .h4{
 
-    font-size: 18px;
+    font-size: 20px;
+    margin-top: 20px;
     
 
 }

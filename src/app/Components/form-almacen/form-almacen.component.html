@@ -1,0 +1,24 @@
+
+<h1>Formulario de Almacén</h1>
+<form action="procesar_almacen.php" method="POST">
+    <div class="input-group">
+        <div class="left">
+            <label for="id_almacen">ID Almacén:</label>
+            <input type="text" id="id_almacen" name="id_almacen" required>
+
+            <label for="id_sede">ID Sede:</label>
+            <input type="text" id="id_sede" name="id_sede" required>
+
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="right">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+    </div>
+    <input type="submit" value="Guardar">
+</form>

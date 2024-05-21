@@ -22,7 +22,7 @@ body{
     margin-top: 100px;
     border: 0px;
     border-radius: 5px;
-    width: 300px;
+    width: 320px;
 }
 
 .header_m{
@@ -31,7 +31,8 @@ body{
 }
 
 .logo{
-    height: 60px;
+    height: 65px;
+    margin-bottom: 20px;
 }
 
 .lock1{
@@ -71,6 +72,7 @@ body{
 
 .p2{
     margin-right: 30px;
+    margin-top: 11px;
 }
 
 .input{
@@ -89,4 +91,8 @@ body{
 .final{
     display: flex;
     justify-content: center;
+}
+
+.link{
+    color: black;
 }
