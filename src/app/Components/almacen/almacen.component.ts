@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { DataTableComponent } from '../datatable/datatable.component';
+import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
 
 @Component({
   selector: 'app-almacen',
   standalone: true,
-  imports: [DataTableComponent],
+  imports: [DatatableAngular],
   templateUrl: './almacen.component.html',
   styleUrl: './almacen.component.css'
 })

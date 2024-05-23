@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { DataTableComponent } from '../datatable/datatable.component';
+import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
 
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [DataTableComponent],
+  imports: [DatatableAngular],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })

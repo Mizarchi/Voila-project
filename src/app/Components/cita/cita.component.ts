@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { DataTableComponent } from '../datatable/datatable.component';
+import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
 
 @Component({
   selector: 'app-cita',
   standalone: true,
-  imports: [DataTableComponent],
+  imports: [DatatableAngular],
   templateUrl: './cita.component.html',
   styleUrl: './cita.component.css',
 })

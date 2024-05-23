@@ -40,6 +40,17 @@
 
 }
 
+.info{
+  height: 120px;
+  width: 90%;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  margin-top: 73px;
+  padding: 10px;
+  background: white;
+  position: absolute;
+}
+
 .info-grafic{
   display: flex;
   justify-content: space-between;
@@ -55,16 +66,7 @@
   justify-content: center;
 }
 
-.info{
-  height: 120px;
-  width: 90%;
-  border: 1px solid #dcdcdc;
-  border-radius: 5px;
-  margin-top: 73px;
-  padding: 10px;
-  background: white;
-  position: absolute;
-}
+
 
 .icon-card{
   height: 50px;

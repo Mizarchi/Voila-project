@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+
+}
+
+.mat-elevation-z8{
+  margin: 60px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.button{
+  display: flex;
+  justify-content: end;
+  margin-right: 60px;
+  gap: 12px;
+}
+
+.filter{
+  display: flex;
+  justify-content: end;
+  margin-right: 60px;
+  margin-top: 60px;
+}
