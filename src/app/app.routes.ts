@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './Components/login/login.component';
 import { RegisterComponent } from './Components/register/register.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { DataTableComponent } from './Components/datatable/datatable.component';
 import { LayoutComponent } from './Components/layout/layout.component';
 import { PagosComponent } from './Components/pagos/pagos.component';
 import { CitaComponent } from './Components/cita/cita.component';
@@ -15,7 +14,6 @@ export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'datatable', component: DataTableComponent },
   { path: 'empleado', component: EmpleadosComponent},
   {  
     path: 'dashboard',
