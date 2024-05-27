@@ -75,7 +75,11 @@
   <div class="app-content">
     <div class="dashboard">
       <img class="icon-menu" src="../../../assets/icon-menu.svg" />
-      <button class="cliente2"> <img height="30px" src="../../../assets/profile-circle.svg"> Mizar T.</button>
+      <button class="menu" mat-button [matMenuTriggerFor]="menu"> <img class="icon" src="../../../assets/profile-circle.svg" />  Mizar T.</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Perfil</button>
+        <button mat-menu-item>Configuración</button>
+      </mat-menu>
     </div>
 
     <div class="app-route">

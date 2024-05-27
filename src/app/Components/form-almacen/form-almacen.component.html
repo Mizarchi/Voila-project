@@ -1,24 +1,33 @@
 
-<h1>Formulario de Almacén</h1>
-<form action="procesar_almacen.php" method="POST">
+<h1 mat-dialog-title>Formulario de Almacén</h1>
+<mat-dialog-content>
+<form>
     <div class="input-group">
-        <div class="left">
+        <div>
             <label for="id_almacen">ID Almacén:</label>
             <input type="text" id="id_almacen" name="id_almacen" required>
+        </div>
 
+        <div>
             <label for="id_sede">ID Sede:</label>
             <input type="text" id="id_sede" name="id_sede" required>
+        </div>
 
+        <div>
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" required>
         </div>
-        <div class="right">
+
+        <div>
             <label for="direccion">Dirección:</label>
             <input type="text" id="direccion" name="direccion" required>
+        </div>
 
+        <div>
             <label for="descripcion">Descripción:</label>
             <input type="text" id="descripcion" name="descripcion" required>
         </div>
     </div>
     <input type="submit" value="Guardar">
 </form>
+</mat-dialog-content>

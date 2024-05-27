@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
 import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
+import { MatDialog } from '@angular/material/dialog';
+import { FormPagosComponent } from '../form-pagos/form-pagos.component';
 
 @Component({
   selector: 'app-pagos',
@@ -53,4 +54,10 @@ export class PagosComponent {
       descripcion: 'limpieza facial',
     },
   ];
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(FormPagosComponent)
+  }
 }

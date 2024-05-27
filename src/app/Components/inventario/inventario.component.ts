@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
+import { FormInventarioComponent } from '../form-inventario/form-inventario.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-inventario',
@@ -79,4 +81,11 @@ export class InventarioComponent {
   
     },
   ];
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(FormInventarioComponent)
+  }
 }
+

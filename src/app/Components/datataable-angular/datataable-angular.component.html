@@ -1,6 +1,6 @@
 <div class="filter">
   <mat-form-field>
-    <input matInput type="text" (keyup)="doFilter($event)" placeholder="Filter">
+    <input matInput type="text" (keyup)="doFilter($event)" placeholder="Buscar">
   </mat-form-field>
 </div>
 
@@ -8,11 +8,12 @@
   <table *ngIf="dataSource" mat-table [dataSource]="dataSource" matSort>
     <!-- Position Column -->
     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+
       <th mat-header-cell *matHeaderCellDef mat-sort-header>{{column}}</th>
       <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"> </tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 

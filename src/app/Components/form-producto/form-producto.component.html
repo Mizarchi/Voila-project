@@ -1,44 +1,66 @@
-<h1>Formulario de Producto</h1>
-<form action="procesar_producto.php" method="POST">
+<h1 mat-dialog-title>Formulario de Producto</h1>
+<mat-dialog-content>
+<form>
     <div class="input-group">
-        <div class="left">
+        <div>
             <label for="id_producto">ID Producto:</label>
             <input type="text" id="id_producto" name="id_producto" required>
+        </div>
 
+        <div>
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" required>
+        </div>
 
+        <div>
             <label for="descripcion">Descripción:</label>
             <input type="text" id="descripcion" name="descripcion">
+        </div>
 
+        <div>
             <label for="modelo">Modelo:</label>
             <input type="text" id="modelo" name="modelo">
+        </div>
 
+        <div>
             <label for="marca">Marca:</label>
             <input type="text" id="marca" name="marca">
+        </div>
 
+        <div>
             <label for="observacion">Observación:</label>
             <input type="text" id="observacion" name="observacion">
         </div>
-        <div class="right">
+        <div>
             <label for="presentacion">Presentación:</label>
             <input type="text" id="presentacion" name="presentacion">
+        </div>
 
+        <div>
             <label for="unidad">Unidad:</label>
             <input type="text" id="unidad" name="unidad">
+        </div>
 
+        <div>
             <label for="medida">Medida:</label>
             <input type="text" id="medida" name="medida">
+        </div>
 
+        <div>
             <label for="cantidad">Cantidad:</label>
             <input type="number" id="cantidad" name="cantidad">
-
+        </div>
+        
+        <div>
             <label for="precio">Precio:</label>
             <input type="number" id="precio" name="precio">
+        </div>
 
+        <div>
             <label for="moneda">Moneda:</label>
             <input type="text" id="moneda" name="moneda">
         </div>
     </div>
     <input type="submit" value="Guardar">
 </form>
+</mat-dialog-content>

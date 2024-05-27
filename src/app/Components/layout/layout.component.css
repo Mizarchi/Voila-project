@@ -63,6 +63,15 @@
   margin-left: 20px;
 }
 
+.icon{
+  height: 30px;
+}
+
+.menu{
+  font-size: 15px;
+  margin-top: 15px;
+  margin-right: 20px;
+}
 .app-container {
   display: flex;
 }

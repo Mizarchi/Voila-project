@@ -16,4 +16,8 @@ import {
 })
 export class FormCitasComponent {
   constructor(public dialogRef: MatDialogRef<FormCitasComponent>) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 }

@@ -1,40 +1,48 @@
 <h1 mat-dialog-title>Formulario de Cita</h1>
 
 <mat-dialog-content>
+  <mat-form-field class="full-width">
+    <mat-label for="id_cita">Cita:</mat-label>
+    <input matInput type="text" id="id_cita" name="id_cita" required />
+  </mat-form-field>
 
-  <form>
-    <div class="input-group">
-      <div class="left">
-        <label for="id_cita">ID Cita:</label>
-        <input type="text" id="id_cita" name="id_cita" required />
+  <mat-form-field class="full-width">
+    <mat-label for="id_customer">Cliente:</mat-label>
+    <input matInput type="text" id="id_customer" name="id_customer" required />
+  </mat-form-field>
 
-        <label for="id_customer">ID Cliente:</label>
-        <input type="text" id="id_customer" name="id_customer" required />
+  <mat-form-field class="full-width">
+    <mat-label for="id_servicio">Servicio:</mat-label>
+    <input matInput type="text" id="id_servicio" name="id_servicio" required />
+  </mat-form-field>
 
-        <label for="id_servicio">ID Servicio:</label>
-        <input type="text" id="id_servicio" name="id_servicio" required />
+  <mat-form-field class="full-width">
+    <mat-label for="id_tipo_servicio"> Tipo de Servicio:</mat-label>
+    <input matInput type="text" id="id_tipo_servicio" name="id_tipo_servicio" required />
+  </mat-form-field>
 
-        <label for="id_tipo_servicio">ID Tipo de Servicio:</label>
-        <input
-          type="text"
-          id="id_tipo_servicio"
-          name="id_tipo_servicio"
-          required/>
-      </div>
-      <div class="right">
-        <label for="id_employee">ID Empleado:</label>
-        <input type="text" id="id_employee" name="id_employee" required />
+  <mat-form-field class="full-width">
+    <mat-label for="id_employee">Empleado:</mat-label>
+    <input matInput type="text" id="id_employee" name="id_employee" required />
+  </mat-form-field>
 
-        <label for="fecha">Fecha:</label>
-        <input type="date" id="fecha" name="fecha" required />
+  <mat-form-field class="full-width">
+    <mat-label for="fecha">Fecha:</mat-label>
+    <input matInput type="date" id="fecha" name="fecha" required />
+  </mat-form-field>
 
-        <label for="hora_inicio">Hora de Inicio:</label>
-        <input type="time" id="hora_inicio" name="hora_inicio" required />
+  <mat-form-field class="full-width">
+    <mat-label for="hora_inicio">Hora de Inicio:</mat-label>
+    <input matInput type="time" id="hora_inicio" name="hora_inicio" required />
+  </mat-form-field>
 
-        <label for="hora_fin">Hora de Fin:</label>
-        <input type="time" id="hora_fin" name="hora_fin" required />
-      </div>
-    </div>
-    <input type="submit" value="Guardar" />
-  </form>
+  <mat-form-field class="full-width">
+    <mat-label for="hora_fin">Hora de Fin:</mat-label>
+    <input matInput type="time" id="hora_fin" name="hora_fin" required />
+  </mat-form-field>
 </mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button  cdkFocusInitial>Ok</button>
+</mat-dialog-actions>
