@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { FormCitasComponent } from '../form-citas/form-citas.component';
+
+
 
 @Component({
   selector: 'app-cita',
   standalone: true,
-  imports: [DatatableAngular],
+  imports: [DatatableAngular, MatDialogModule, ],
   templateUrl: './cita.component.html',
   styleUrl: './cita.component.css',
 })
@@ -65,4 +69,10 @@ export class CitaComponent {
       hora_fin: '3:30pm',
     },
   ];
+
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(FormCitasComponent)
+  }
 }
