@@ -1,33 +1,34 @@
 
 <h1 mat-dialog-title>Formulario de Almacén</h1>
 <mat-dialog-content>
-<form>
-    <div class="input-group">
-        <div>
-            <label for="id_almacen">ID Almacén:</label>
-            <input type="text" id="id_almacen" name="id_almacen" required>
-        </div>
-
-        <div>
-            <label for="id_sede">ID Sede:</label>
-            <input type="text" id="id_sede" name="id_sede" required>
-        </div>
-
-        <div>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-
-        <div>
-            <label for="direccion">Dirección:</label>
-            <input type="text" id="direccion" name="direccion" required>
-        </div>
-
-        <div>
-            <label for="descripcion">Descripción:</label>
-            <input type="text" id="descripcion" name="descripcion" required>
-        </div>
-    </div>
-    <input type="submit" value="Guardar">
-</form>
-</mat-dialog-content>
+    <mat-form-field class="full-width">
+      <mat-label for="id_almacen">Almacén:</mat-label>
+      <input matInput type="text" id="id_almacen" name="id_almacen" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="id_sede">Sede:</mat-label>
+      <input matInput type="text" id="id_sede" name="id_sede" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="name">Nombre:</mat-label>
+      <input matInput type="text" id="name" name="name" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="direccion">Dirección:</mat-label>
+      <input matInput type="text" id="direccion" name="direccion" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="descripcion">Descripción:</mat-label>
+      <input matInput type="text" id="descripcion" name="descripcion" required />
+    </mat-form-field>
+  </mat-dialog-content>
+  
+  
+  <mat-dialog-actions>
+    <button mat-button color="primary" (click)="onNoClick()">Atras</button>
+    <button mat-raised-button color="primary" cdkFocusInitial>Guardar</button>
+  </mat-dialog-actions>

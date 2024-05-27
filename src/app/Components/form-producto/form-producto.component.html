@@ -1,66 +1,68 @@
 <h1 mat-dialog-title>Formulario de Producto</h1>
 <mat-dialog-content>
-<form>
-    <div class="input-group">
-        <div>
-            <label for="id_producto">ID Producto:</label>
-            <input type="text" id="id_producto" name="id_producto" required>
-        </div>
-
-        <div>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-
-        <div>
-            <label for="descripcion">Descripción:</label>
-            <input type="text" id="descripcion" name="descripcion">
-        </div>
-
-        <div>
-            <label for="modelo">Modelo:</label>
-            <input type="text" id="modelo" name="modelo">
-        </div>
-
-        <div>
-            <label for="marca">Marca:</label>
-            <input type="text" id="marca" name="marca">
-        </div>
-
-        <div>
-            <label for="observacion">Observación:</label>
-            <input type="text" id="observacion" name="observacion">
-        </div>
-        <div>
-            <label for="presentacion">Presentación:</label>
-            <input type="text" id="presentacion" name="presentacion">
-        </div>
-
-        <div>
-            <label for="unidad">Unidad:</label>
-            <input type="text" id="unidad" name="unidad">
-        </div>
-
-        <div>
-            <label for="medida">Medida:</label>
-            <input type="text" id="medida" name="medida">
-        </div>
-
-        <div>
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" name="cantidad">
-        </div>
-        
-        <div>
-            <label for="precio">Precio:</label>
-            <input type="number" id="precio" name="precio">
-        </div>
-
-        <div>
-            <label for="moneda">Moneda:</label>
-            <input type="text" id="moneda" name="moneda">
-        </div>
-    </div>
-    <input type="submit" value="Guardar">
-</form>
-</mat-dialog-content>
+    <mat-form-field class="full-width">
+      <mat-label for="id_producto">Producto:</mat-label>
+      <input matInput type="text" id="id_producto" name="id_producto" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="name">Nombre:</mat-label>
+      <input matInput type="text" id="name" name="name" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="descripcion">Descripción:</mat-label>
+      <input matInput type="text" id="descripcion" name="descripcion" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="modelo">Modelo:</mat-label>
+      <input matInput type="text" id="modelo" name="modelo" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="marca">Marca:</mat-label>
+      <input matInput type="text" id="marca" name="marca" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="presentacion">Presentación:</mat-label>
+      <input matInput type="text" id="presentacion" name="presentacion" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="unidad">Unidad:</mat-label>
+      <input matInput type="text" id="unidad" name="unidad" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="medida">Medida:</mat-label>
+      <input matInput type="text" id="medida" name="medida" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="cantidad">Cantidad:</mat-label>
+      <input matInput type="number" id="cantidad" name="cantidad" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="observacion">Observación:</mat-label>
+      <input matInput type="text" id="observacion" name="observacion" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="precio">Precio:</mat-label>
+      <input matInput type="number" id="precio" name="precio" required />
+    </mat-form-field>
+  
+    <mat-form-field class="full-width">
+      <mat-label for="moneda">Moneda:</mat-label>
+      <input matInput type="text" id="moneda" name="moneda" required />
+    </mat-form-field>
+  </mat-dialog-content>
+  
+  
+  <mat-dialog-actions>
+    <button mat-button color="primary" (click)="onNoClick()">Atras</button>
+    <button mat-raised-button color="primary" cdkFocusInitial>Guardar</button>
+  </mat-dialog-actions>

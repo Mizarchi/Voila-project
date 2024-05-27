@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
 import { FormPagosComponent } from '../form-pagos/form-pagos.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { FormProductoComponent } from '../form-producto/form-producto.component';
 
 @Component({
   selector: 'app-productos',
   standalone: true,
-  imports: [DatatableAngular],
+  imports: [DatatableAngular, MatDialogModule,MatButtonModule],
   templateUrl: './productos.component.html',
   styleUrl: './productos.component.css'
 })
@@ -98,6 +100,6 @@ export class ProductosComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(FormPagosComponent)
+    const dialogRef = this.dialog.open(FormProductoComponent)
   }
 }

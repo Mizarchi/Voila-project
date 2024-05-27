@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
 import { FormAlmacenComponent } from '../form-almacen/form-almacen.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-almacen',
   standalone: true,
-  imports: [DatatableAngular],
+  imports: [DatatableAngular, MatDialogModule,MatButtonModule],
   templateUrl: './almacen.component.html',
   styleUrl: './almacen.component.css'
 })

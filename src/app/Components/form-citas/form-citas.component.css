@@ -2,11 +2,11 @@
   max-width: 560px;
 }
 
+::ng-deep .mat-mdc-dialog-actions {
+  justify-content: end;
+  margin: 16px 30px;
+}
 .full-width {
   width: 100%;
 }
 
-.boton-modal{
-  display: flex;
-  justify-content: center;
-}

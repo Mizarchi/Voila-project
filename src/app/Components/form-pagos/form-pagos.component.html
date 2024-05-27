@@ -1,36 +1,38 @@
 <h1 mat-dialog-title>Formulario de Pagos</h1>
 <mat-dialog-content>
-<form>
-    <div class="input-group">
-        <div>
-            <label for="id_pago">ID Pago:</label>
-            <input type="text" id="id_pago" name="id_pago" required>
-        </div>
-
-        <div>
-            <label for="id_cita">ID Cita:</label>
-            <input type="text" id="id_cita" name="id_cita">
-        </div>
-        <div>
-            <label for="id_venta">ID Venta:</label>
-            <input type="text" id="id_venta" name="id_venta">
-        </div>
-
-        <div>
-            <label for="monto_total">Monto Total:</label>
-            <input type="number" id="monto_total" name="monto_total" required>
-        </div>
-
-        <div>
-            <label for="tipo_moneda">Tipo de Moneda:</label>
-            <input type="text" id="tipo_moneda" name="tipo_moneda" required>
-        </div>
-
-        <div>
-            <label for="descripcion">Descripción:</label>
-            <input type="text" id="descripcion" name="descripcion">
-        </div>
-    </div>
-    <input type="submit" value="Guardar">
-</form>
-</mat-dialog-content>
+<mat-form-field class="full-width">
+    <mat-label for="id_pago">Pago:</mat-label>
+    <input matInput type="text" id="id_pago" name="id_pago" required />
+  </mat-form-field>
+  
+  <mat-form-field class="full-width">
+    <mat-label for="id_cita">Cita:</mat-label>
+    <input matInput type="text" id="id_cita" name="id_cita" required />
+  </mat-form-field>
+  
+  <mat-form-field class="full-width">
+    <mat-label for="id_venta">Venta:</mat-label>
+    <input matInput type="text" id="id_venta" name="id_venta" required />
+  </mat-form-field>
+  
+  <mat-form-field class="full-width">
+    <mat-label for="monto_total">Monto Total:</mat-label>
+    <input matInput type="number" id="monto_total" name="monto_total" required />
+  </mat-form-field>
+  
+  <mat-form-field class="full-width">
+    <mat-label for="tipo_moneda">Tipo de Moneda:</mat-label>
+    <input matInput type="text" id="tipo_moneda" name="tipo_moneda" required />
+  </mat-form-field>
+  
+  <mat-form-field class="full-width">
+    <mat-label for="descripcion">Descripción:</mat-label>
+    <input matInput type="text" id="descripcion" name="descripcion" required />
+  </mat-form-field>
+  
+  </mat-dialog-content>
+  
+  <mat-dialog-actions>
+    <button mat-button color="primary" (click)="onNoClick()">Atras</button>
+    <button mat-raised-button color="primary" cdkFocusInitial>Guardar</button>
+  </mat-dialog-actions>

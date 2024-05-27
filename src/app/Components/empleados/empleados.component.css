@@ -4,15 +4,23 @@
   overflow: hidden;
   display: grid;
   grid-template-rows: 64px 1fr;
-  background-color:#F5F5F5;
 }
 
 .dashboard {
   display: flex;
-  justify-content:end;
+  justify-content:space-between;
   background: white;
   width: 100%;
   height: 60px;
+}
+
+.icon{
+  height: 30px;
+}
+.menu{
+  font-size: 15px;
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .icon-menu {

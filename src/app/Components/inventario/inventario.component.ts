@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
 import { FormInventarioComponent } from '../form-inventario/form-inventario.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-inventario',
   standalone: true,
-  imports: [DatatableAngular],
+  imports: [DatatableAngular, MatDialogModule,MatButtonModule],
   templateUrl: './inventario.component.html',
   styleUrl: './inventario.component.css',
 })
