@@ -25,8 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css",
+              "src/theme.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css"
             ],
@@ -87,13 +88,12 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css",
+              "src/theme.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css"
             ],
-            
-            
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "src/assets/datatables/datatables.min.js",
@@ -102,13 +102,12 @@
               "node_modules/datatables.net/js/jquery.dataTables.min.js",
               "node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"
             ]
-
-
-
-            
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "98a98b4f-7a77-4026-b13c-40efd8e1eed2"
   }
 }

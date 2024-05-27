@@ -5,3 +5,8 @@
 .full-width {
   width: 100%;
 }
+
+.boton-modal{
+  display: flex;
+  justify-content: center;
+}

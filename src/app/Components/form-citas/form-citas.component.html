@@ -43,6 +43,8 @@
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button  cdkFocusInitial>Ok</button>
+  <div class="boton-modal">
+  <button mat-raised-button color="primary"  (click)="onNoClick()">Atras</button>
+  <button mat-raised-button color="primary" cdkFocusInitial>Guardar</button>
+  </div>
 </mat-dialog-actions>
