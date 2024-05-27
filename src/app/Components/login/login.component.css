@@ -10,6 +10,7 @@ body{
 .container1{
     display: flex;
     justify-content: center;
+    align-items: center;
     background: #ffe0e5;
     min-height: 100vh;
 }
@@ -19,7 +20,6 @@ body{
     background-color: white;
     padding: 20px;
     height: 50%;
-    margin-top: 100px;
     border: 0px;
     border-radius: 5px;
     width: 320px;
