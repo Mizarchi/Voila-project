@@ -15,12 +15,14 @@ import { FormCitasComponent } from './Components/form-citas/form-citas.component
 import { FormInventarioComponent } from './Components/form-inventario/form-inventario.component';
 import { FormPagosComponent } from './Components/form-pagos/form-pagos.component';
 import { FormProductoComponent } from './Components/form-producto/form-producto.component';
+import { EjemploComponent } from './Components/ejemplo/ejemplo.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'empleado', component: EmpleadosComponent},
+  { path: 'ejemplo', component: EjemploComponent},
 
   
 
