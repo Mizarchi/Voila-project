@@ -53,6 +53,8 @@
   overflow: auto;
   background: #efefef;
   padding: 16px 0;
+  min-width: 100vh;
+  min-height: 100vh;
 }
 
 .list-group-item {
