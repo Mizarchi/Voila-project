@@ -1,5 +1,5 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
+<mat-drawer-container class="example-container" autosize [hasBackdrop]="mdcBackdrop">
+  <mat-drawer #drawer class="example-sidenav" [mode]="drawerMode">
     <div class="header2">
       <img class="logo" src="../../../assets/Logo_voila.png" alt="" />
     </div>
@@ -105,3 +105,4 @@
     <router-outlet />
   </div>
 </mat-drawer-container>
+

@@ -1,16 +1,12 @@
-
 .logo {
   height: 75px;
 }
-
-
 
 .app-card {
   background: white;
   border-radius: 5px;
   height: 200px;
 }
-
 
 .header2 {
   height: 60px;
@@ -22,7 +18,7 @@
 
 .dashboard {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   background: white;
   width: 100%;
   height: 60px;
@@ -32,17 +28,17 @@
   height: 20px;
 }
 
-.button{
+.button {
   width: 10px;
   margin-top: 10px;
   left: 20px;
 }
 
-.icon{
+.icon {
   height: 30px;
 }
 
-.menu{
+.menu {
   font-size: 15px;
   margin-top: 15px;
   margin-right: 20px;
@@ -62,11 +58,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background:#ffe0e5;
+  background: #ffe0e5;
   margin-top: 30px;
 }
 
-.list-group-item:hover{
+.list-group-item:hover {
   color: white;
   background-color: #F3D4D9;
 }
@@ -77,14 +73,14 @@
   gap: 15px;
 }
 
-.cliente2{
+.cliente2 {
   margin-right: 30px;
   background-color: white;
   border: 0px;
 }
 
-.cliente2:hover{
-background-color: #F5F5F5;
+.cliente2:hover {
+  background-color: #F5F5F5;
 }
 
 .example-container {
@@ -102,19 +98,25 @@ background-color: #F5F5F5;
 
 .example-sidenav {
   padding: 20px;
-
-  width:16%;
+  width: 250px;
 }
 
-.mat-drawer{
-background:#ffe0e5;
+@media screen and (min-width: 768px) {
+  .example-sidenav {
+    width: 16%;
+  }
+}
+
+.mat-drawer {
+  background: #ffe0e5;
 }
 
 .dashboard {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   background: white;
   width: 100%;
   height: 60px;
 }
+
 
