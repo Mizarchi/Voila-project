@@ -15,7 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class CitaComponent {
   data = [
-    'id_cita',
+    'cita',
     'id_customer',
     'id_servicio',
     'id_tipo_servicio',
@@ -27,7 +27,7 @@ export class CitaComponent {
 
   rows = [
     {
-      id_cita: '3',
+      cita: '3',
       id_customer: '5',
       id_servicio: 'peluqueria',
       id_tipo_servicio: 'corte y secado',
@@ -38,7 +38,7 @@ export class CitaComponent {
     },
 
     {
-      id_cita: '3',
+      cita: '3',
       id_customer: '5',
       id_servicio: 'peluqueria',
       id_tipo_servicio: 'corte y secado',
@@ -49,7 +49,7 @@ export class CitaComponent {
     },
 
     {
-      id_cita: '3',
+      cita: '3',
       id_customer: '5',
       id_servicio: 'peluqueria',
       id_tipo_servicio: 'corte y secado',
@@ -60,7 +60,7 @@ export class CitaComponent {
     },
 
     {
-      id_cita: '3',
+      cita: '3',
       id_customer: '5',
       id_servicio: 'peluqueria',
       id_tipo_servicio: 'corte y secado',

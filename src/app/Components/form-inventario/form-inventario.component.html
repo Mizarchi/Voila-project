@@ -1,58 +1,57 @@
 <h1 mat-dialog-title>Formulario de Inventario</h1>
 <mat-dialog-content>
-    <mat-form-field class="full-width">
-      <mat-label for="id_inventario">Inventario:</mat-label>
-      <input matInput type="text" id="id_inventario" name="id_inventario" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="id_producto">Producto:</mat-label>
-      <input matInput type="text" id="id_producto" name="id_producto" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="id_almacen">Almacén:</mat-label>
-      <input matInput type="text" id="id_almacen" name="id_almacen" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="descripcion">Descripción:</mat-label>
-      <input matInput type="text" id="descripcion" name="descripcion" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="presentacion">Presentación:</mat-label>
-      <input matInput type="text" id="presentacion" name="presentacion" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="cantidad">Cantidad:</mat-label>
-      <input matInput type="number" id="cantidad" name="cantidad" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="stock">Stock:</mat-label>
-      <input matInput type="number" id="stock" name="stock" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="entrada">Entrada:</mat-label>
-      <input matInput type="number" id="entrada" name="entrada" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="salida">Salida:</mat-label>
-      <input matInput type="number" id="salida" name="salida" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="min_stock">Min Stock:</mat-label>
-      <input matInput type="number" id="min_stock" name="min_stock" required />
-    </mat-form-field>
-  </mat-dialog-content>
-  
-  
-  <mat-dialog-actions>
-    <button mat-button color="primary" (click)="onNoClick()">Atras</button>
-    <button mat-raised-button color="primary" cdkFocusInitial>Guardar</button>
-  </mat-dialog-actions>
+  <mat-form-field class="full-width">
+    <mat-label>Inventario</mat-label>
+    <input matInput [(ngModel)]="inventario" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Producto</mat-label>
+    <input matInput [(ngModel)]="producto" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Almacén</mat-label>
+    <input matInput [(ngModel)]="almacen" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Descripción</mat-label>
+    <input matInput [(ngModel)]="descripcion" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Presentación</mat-label>
+    <input matInput [(ngModel)]="presentacion" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Cantidad</mat-label>
+    <input matInput type="number" [(ngModel)]="cantidad" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Stock</mat-label>
+    <input matInput type="number" [(ngModel)]="stock" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Entrada</mat-label>
+    <input matInput [(ngModel)]="entrada" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Salida</mat-label>
+    <input matInput [(ngModel)]="salida" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Min Stock</mat-label>
+    <input matInput type="number" [(ngModel)]="min_stock" required />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Atras</button>
+  <button mat-raised-button color="primary" (click)="onSaveClick()">Guardar</button>
+</mat-dialog-actions>
