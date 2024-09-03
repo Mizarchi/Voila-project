@@ -1,34 +1,32 @@
-
 <h1 mat-dialog-title>Formulario de Almacén</h1>
 <mat-dialog-content>
-    <mat-form-field class="full-width">
-      <mat-label for="id_almacen">Almacén:</mat-label>
-      <input matInput type="text" id="id_almacen" name="id_almacen" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="id_sede">Sede:</mat-label>
-      <input matInput type="text" id="id_sede" name="id_sede" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="name">Nombre:</mat-label>
-      <input matInput type="text" id="name" name="name" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="direccion">Dirección:</mat-label>
-      <input matInput type="text" id="direccion" name="direccion" required />
-    </mat-form-field>
-  
-    <mat-form-field class="full-width">
-      <mat-label for="descripcion">Descripción:</mat-label>
-      <input matInput type="text" id="descripcion" name="descripcion" required />
-    </mat-form-field>
-  </mat-dialog-content>
-  
-  
-  <mat-dialog-actions>
-    <button mat-button color="primary" (click)="onNoClick()">Atras</button>
-    <button mat-raised-button color="primary" cdkFocusInitial>Guardar</button>
-  </mat-dialog-actions>
+  <mat-form-field class="full-width">
+    <mat-label for="id_almacen">Almacén:</mat-label>
+    <input matInput type="text" id="id_almacen" [(ngModel)]="nuevoAlmacen.id_almacen" name="id_almacen" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label for="id_sede">Sede:</mat-label>
+    <input matInput type="text" id="id_sede" [(ngModel)]="nuevoAlmacen.id_sede" name="id_sede" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label for="name">Nombre:</mat-label>
+    <input matInput type="text" id="name" [(ngModel)]="nuevoAlmacen.name" name="name" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label for="direccion">Dirección:</mat-label>
+    <input matInput type="text" id="direccion" [(ngModel)]="nuevoAlmacen.direccion" name="direccion" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label for="descripcion">Descripción:</mat-label>
+    <input matInput type="text" id="descripcion" [(ngModel)]="nuevoAlmacen.descripcion" name="descripcion" required />
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button color="primary" (click)="onNoClick()">Atras</button>
+  <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+</mat-dialog-actions>

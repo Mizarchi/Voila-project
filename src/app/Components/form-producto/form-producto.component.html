@@ -1,68 +1,68 @@
 <h1 mat-dialog-title>Formulario de Producto</h1>
+
 <mat-dialog-content>
-    <mat-form-field class="full-width">
-      <mat-label for="id_producto">Producto:</mat-label>
-      <input matInput type="text" id="id_producto" name="id_producto" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="id_producto">Producto:</mat-label>
+    <input matInput [(ngModel)]="id_producto" type="text" id="id_producto" name="id_producto" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="name">Nombre:</mat-label>
-      <input matInput type="text" id="name" name="name" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="name">Nombre:</mat-label>
+    <input matInput [(ngModel)]="name" type="text" id="name" name="name" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="descripcion">Descripción:</mat-label>
-      <input matInput type="text" id="descripcion" name="descripcion" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="descripcion">Descripción:</mat-label>
+    <input matInput [(ngModel)]="descripcion" type="text" id="descripcion" name="descripcion" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="modelo">Modelo:</mat-label>
-      <input matInput type="text" id="modelo" name="modelo" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="modelo">Modelo:</mat-label>
+    <input matInput [(ngModel)]="modelo" type="text" id="modelo" name="modelo" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="marca">Marca:</mat-label>
-      <input matInput type="text" id="marca" name="marca" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="marca">Marca:</mat-label>
+    <input matInput [(ngModel)]="marca" type="text" id="marca" name="marca" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="presentacion">Presentación:</mat-label>
-      <input matInput type="text" id="presentacion" name="presentacion" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="presentacion">Presentación:</mat-label>
+    <input matInput [(ngModel)]="presentacion" type="text" id="presentacion" name="presentacion" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="unidad">Unidad:</mat-label>
-      <input matInput type="text" id="unidad" name="unidad" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="unidad">Unidad:</mat-label>
+    <input matInput [(ngModel)]="unidad" type="number" id="unidad" name="unidad" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="medida">Medida:</mat-label>
-      <input matInput type="text" id="medida" name="medida" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="medida">Medida:</mat-label>
+    <input matInput [(ngModel)]="medida" type="number" id="medida" name="medida" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="cantidad">Cantidad:</mat-label>
-      <input matInput type="number" id="cantidad" name="cantidad" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="cantidad">Cantidad:</mat-label>
+    <input matInput [(ngModel)]="cantidad" type="number" id="cantidad" name="cantidad" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="observacion">Observación:</mat-label>
-      <input matInput type="text" id="observacion" name="observacion" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="observacion">Observación:</mat-label>
+    <input matInput [(ngModel)]="observacion" type="text" id="observacion" name="observacion" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="precio">Precio:</mat-label>
-      <input matInput type="number" id="precio" name="precio" required />
-    </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="precio">Precio:</mat-label>
+    <input matInput [(ngModel)]="precio" type="text" id="precio" name="precio" required />
+  </mat-form-field>
   
-    <mat-form-field class="full-width">
-      <mat-label for="moneda">Moneda:</mat-label>
-      <input matInput type="text" id="moneda" name="moneda" required />
-    </mat-form-field>
-  </mat-dialog-content>
+  <mat-form-field class="full-width">
+    <mat-label for="moneda">Moneda:</mat-label>
+    <input matInput [(ngModel)]="moneda" type="text" id="moneda" name="moneda" required />
+  </mat-form-field>
+</mat-dialog-content>
   
-  
-  <mat-dialog-actions>
-    <button mat-button color="primary" (click)="onNoClick()">Atras</button>
-    <button mat-raised-button color="primary" cdkFocusInitial>Guardar</button>
-  </mat-dialog-actions>
+<mat-dialog-actions>
+  <button mat-button color="primary" (click)="onNoClick()">Atras</button>
+  <button mat-raised-button color="primary" (click)="onSaveClick()" cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>

@@ -1,37 +1,33 @@
 import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatTableDataSource } from '@angular/material/table';
+import { DatatableAngular, PeriodicElement } from '../datataable-angular/datataable-angular.component';
 import { FormInventarioComponent } from '../form-inventario/form-inventario.component';
-import { DatatableAngular } from '../datataable-angular/datataable-angular.component'; // Importa tu componente DatatableAngular
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+
+export interface InventarioElement {
+  inventario: string;
+  producto: string;
+  almacen: string;
+  descripcion: string;
+  presentacion: string;
+  cantidad: number;
+  stock: number;
+  entrada: string;
+  salida: string;
+  min_stock: number;
+}
 
 @Component({
   selector: 'app-inventario',
   standalone: true,
-  imports: [
-    DatatableAngular,  // Asegúrate de que este sea un componente standalone
-    MatDialogModule,   // Estos son módulos de Angular
-    MatButtonModule    // Módulo para el botón
-  ],
+  imports: [DatatableAngular, MatDialogModule, MatButtonModule],
   templateUrl: './inventario.component.html',
   styleUrls: ['./inventario.component.css']
 })
 export class InventarioComponent {
-  data = [
-    'inventario',
-    'producto',
-    'almacen',
-    'descripcion',
-    'presentacion',
-    'cantidad',
-    'stock',
-    'entrada',
-    'salida',
-    'min_stock',
-  ];
+  data = ['inventario', 'producto', 'almacen', 'descripcion', 'presentacion', 'cantidad', 'stock', 'entrada', 'salida', 'min_stock'];
 
-  rows = [
+  inventarioData: InventarioElement[] = [
     {
       inventario: '002',
       producto: '005',
@@ -44,9 +40,10 @@ export class InventarioComponent {
       salida: '10/05/2024',
       min_stock: 1,
     },
+    // otros objetos...
   ];
 
-  dataSource = new MatTableDataSource<any>(this.rows);
+  rows: InventarioElement[] = [...this.inventarioData];
 
   constructor(public dialog: MatDialog) {}
 
@@ -55,10 +52,9 @@ export class InventarioComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.rows.push(result);
-        this.dataSource.data = this.rows;  // Actualiza los datos de la tabla directamente
+        this.inventarioData.push(result);  // Agrega el nuevo elemento al inventario
+        this.rows = [...this.inventarioData];  // Actualiza los datos para la tabla
       }
     });
   }
 }
-

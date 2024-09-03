@@ -4,18 +4,32 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { AlmacenElement } from '../almacen/almacen.component'; // Importa la interfaz
 
 @Component({
   selector: 'app-form-almacen',
   standalone: true,
   imports: [MatFormFieldModule, MatInputModule, FormsModule, MatDialogModule, MatButtonModule],
   templateUrl: './form-almacen.component.html',
-  styleUrl: './form-almacen.component.css'
+  styleUrls: ['./form-almacen.component.css']
 })
 export class FormAlmacenComponent {
+  // Modelo de datos para el formulario
+  nuevoAlmacen: AlmacenElement = {
+    id_almacen: '',
+    id_sede: '',
+    name: '',
+    direccion: '',
+    descripcion: ''
+  };
+
   constructor(public dialogRef: MatDialogRef<FormAlmacenComponent>) {}
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  guardar(): void {
+    this.dialogRef.close(this.nuevoAlmacen);
   }
 }

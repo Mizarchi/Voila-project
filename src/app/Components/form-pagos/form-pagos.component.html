@@ -1,38 +1,38 @@
 <h1 mat-dialog-title>Formulario de Pagos</h1>
+
 <mat-dialog-content>
-<mat-form-field class="full-width">
+  <mat-form-field class="full-width">
     <mat-label for="id_pago">Pago:</mat-label>
-    <input matInput type="text" id="id_pago" name="id_pago" required />
+    <input matInput [(ngModel)]="id_pago" type="text" id="id_pago" name="id_pago" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
     <mat-label for="id_cita">Cita:</mat-label>
-    <input matInput type="text" id="id_cita" name="id_cita" required />
+    <input matInput [(ngModel)]="id_cita" type="text" id="id_cita" name="id_cita" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
     <mat-label for="id_venta">Venta:</mat-label>
-    <input matInput type="text" id="id_venta" name="id_venta" required />
+    <input matInput [(ngModel)]="id_venta" type="text" id="id_venta" name="id_venta" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
     <mat-label for="monto_total">Monto Total:</mat-label>
-    <input matInput type="number" id="monto_total" name="monto_total" required />
+    <input matInput [(ngModel)]="monto_total" type="number" id="monto_total" name="monto_total" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
     <mat-label for="tipo_moneda">Tipo de Moneda:</mat-label>
-    <input matInput type="text" id="tipo_moneda" name="tipo_moneda" required />
+    <input matInput [(ngModel)]="tipo_moneda" type="text" id="tipo_moneda" name="tipo_moneda" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
     <mat-label for="descripcion">Descripción:</mat-label>
-    <input matInput type="text" id="descripcion" name="descripcion" required />
+    <input matInput [(ngModel)]="descripcion" type="text" id="descripcion" name="descripcion" required />
   </mat-form-field>
+</mat-dialog-content>
   
-  </mat-dialog-content>
-  
-  <mat-dialog-actions>
-    <button mat-button color="primary" (click)="onNoClick()">Atras</button>
-    <button mat-raised-button color="primary" cdkFocusInitial>Guardar</button>
-  </mat-dialog-actions>
+<mat-dialog-actions>
+  <button mat-button color="primary" (click)="onNoClick()">Atras</button>
+  <button mat-raised-button color="primary" (click)="onSaveClick()" cdkFocusInitial>Guardar</button>
+</mat-dialog-actions>

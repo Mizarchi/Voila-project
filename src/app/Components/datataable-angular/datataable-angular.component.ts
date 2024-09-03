@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -26,9 +26,9 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './datataable-angular.component.html',
   styleUrls: ['./datataable-angular.component.css'], // Corregido a `styleUrls`
 })
-export class DatatableAngular implements OnInit {
-  @Input() displayedColumns!: string[]; // Mejor definir el tipo de columna
-  @Input() rows: PeriodicElement[] = []; // Inicializado por defecto
+export class DatatableAngular implements OnInit, OnChanges {
+  @Input() displayedColumns!: string[];
+  @Input() rows: PeriodicElement[] = [];
 
   dataSource = new MatTableDataSource<PeriodicElement>(this.rows);
 
@@ -36,9 +36,16 @@ export class DatatableAngular implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource<PeriodicElement>(this.rows);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['rows']) {
+      this.dataSource.data = this.rows;  // Actualiza el dataSource cuando rows cambie
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    }
   }
 
   public doFilter = (event: Event) => {
@@ -56,9 +63,5 @@ export class DatatableAngular implements OnInit {
 }
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
 }
 
