@@ -6,11 +6,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableDataSource } from '@angular/material/table';
 
 export interface AlmacenElement {
-  id_almacen: string;
-  id_sede: string;
-  name: string;
-  direccion: string;
-  descripcion: string;
+  Almacen: string;
+  Sede: string;
+  Producto: string;
+  Direccion: string;
+  Descripcion: string;
 }
 
 @Component({
@@ -21,15 +21,15 @@ export interface AlmacenElement {
   styleUrls: ['./almacen.component.css']
 })
 export class AlmacenComponent {
-  data = ['id_almacen', 'id_sede', 'name', 'direccion', 'descripcion'];
+  data = ['Almacen', 'Sede', 'Producto', 'Direccion', 'Descripcion'];
 
   almacenData: AlmacenElement[] = [
     {
-      id_almacen: "2",
-      id_sede: 'los palos grandes',
-      name: 'Elegance shampoo',
-      direccion: 'palos grandes',
-      descripcion: 'shampoo',
+      Almacen: "2",
+      Sede: 'los palos grandes',
+      Producto: 'Elegance shampoo',
+      Direccion: 'palos grandes',
+      Descripcion: 'shampoo',
     },
     // otros objetos...
   ];

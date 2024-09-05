@@ -1,16 +1,31 @@
-import { Component } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import { MatMenuModule } from '@angular/material/menu';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormCitasComponent } from '../form-citas/form-citas.component';
+import {provideNativeDateAdapter} from '@angular/material/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+
+
 @Component({
   selector: 'app-ejemplo',
   standalone: true,
-  imports: [MatSidenavModule, MatButtonModule, RouterOutlet, RouterLink, MatButtonModule, MatMenuModule],
+  providers: [provideNativeDateAdapter()],
+  imports: [MatFormFieldModule, MatInputModule, MatDatepickerModule, MatDialogModule, MatButtonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './ejemplo.component.html',
   styleUrl: './ejemplo.component.css'
 })
+
 export class EjemploComponent {
-    showFiller = false;
+
+constructor(public dialog: MatDialog) {}
+openDialog(): void {
+  const dialogRef = this.dialog.open(FormCitasComponent);
+
+    }
 
 }
+
+

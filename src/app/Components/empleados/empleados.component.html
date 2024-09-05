@@ -2,12 +2,28 @@
   <div class="dashboard">
     <button class="menu" mat-button [matMenuTriggerFor]="menu"> <img class="icon" src="../../../assets/profile-circle.svg" />  Mizar T.</button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Perfil</button>
-      <button mat-menu-item>Configuración</button>
+      <button mat-menu-item routerLink="/configuracion">Configuración</button>
     </mat-menu>
   </div>
 
   <div class="container-fluid">
+
+    <div class="contenedor-calen">
+      <div class="button2">
+        <button mat-mini-fab aria-label="Example icon button with a menu icon" color="primary" (click)="openDialog()"> +</button>
+      </div>
+
+    <div class="Calendario">
+      <mat-form-field>
+        <mat-label>Busca la fecha</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>      
+    </div>
+
+
     <div class="row">
       <div  class="col-md-3 col-12">
         <div class="app-card">

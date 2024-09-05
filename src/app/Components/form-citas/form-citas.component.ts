@@ -16,14 +16,14 @@ import { CitaElement } from '../cita/cita.component'; // Importa la interfaz
 export class FormCitasComponent {
   // Modelo de datos para el formulario
   nuevaCita: CitaElement = {
-    cita: '',
-    id_customer: '',
-    id_servicio: '',
-    id_tipo_servicio: '',
-    id_employee: 0,
-    fecha: '',
-    hora_inicio: '',
-    hora_fin: ''
+    Cita: '',
+    Cliente: '',
+    Servicio: '',
+    Tipo: '',
+    Empleado: '',
+    Fecha: '',
+    Inicio: '',
+    Fin: ''
   };
 
   constructor(public dialogRef: MatDialogRef<FormCitasComponent>) {}

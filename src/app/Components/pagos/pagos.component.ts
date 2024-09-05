@@ -5,12 +5,12 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 export interface PagoElement {
-  id_pago: string;
-  id_cita: string;
-  id_venta: string;
-  monto_total: number;
-  tipo_moneda: string;
-  descripcion: string;
+  Pago: string;
+  Cita: string;
+  Venta: string;
+  Total: number;
+  Moneda: string;
+  Descripcion: string;
 }
 
 @Component({
@@ -21,16 +21,16 @@ export interface PagoElement {
   styleUrls: ['./pagos.component.css'],
 })
 export class PagosComponent {
-  data = ['id_pago', 'id_cita', 'id_venta', 'monto_total', 'tipo_moneda', 'descripcion'];
+  data = ['Pago', 'Cita', 'Venta', 'Total', 'Moneda', 'Descripcion'];
 
   pagosData: PagoElement[] = [
     {
-      id_pago: '15',
-      id_cita: '3',
-      id_venta: '23',
-      monto_total: 1000,
-      tipo_moneda: 'USD',
-      descripcion: 'limpieza facial',
+      Pago: '15',
+      Cita: '3',
+      Venta: '23',
+      Total: 1000,
+      Moneda: 'USD',
+      Descripcion: 'limpieza facial',
     },
     // otros objetos...
   ];

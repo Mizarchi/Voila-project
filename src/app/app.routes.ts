@@ -16,6 +16,7 @@ import { FormInventarioComponent } from './Components/form-inventario/form-inven
 import { FormPagosComponent } from './Components/form-pagos/form-pagos.component';
 import { FormProductoComponent } from './Components/form-producto/form-producto.component';
 import { EjemploComponent } from './Components/ejemplo/ejemplo.component';
+import { ConfiguracionComponent } from './configuracion/configuracion.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -23,6 +24,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'empleado', component: EmpleadosComponent},
   { path: 'ejemplo', component: EjemploComponent},
+  { path: 'configuracion', component:ConfiguracionComponent},
 
   
 

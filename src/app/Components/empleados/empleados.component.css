@@ -39,11 +39,9 @@
   }
 
 .app-card{
-  margin-top: 50px;
   background: white;
   border-radius: 5px;
   height: 200px;
-  margin-bottom: 20px;
   position: relative;
 
 }
@@ -92,3 +90,19 @@
   height: 100%;
   overflow: auto;
 }
+
+.contenedor-calen{
+display: flex;
+padding-top: 30px;
+padding-left: 10px;
+
+}
+
+.button2{
+margin-top: 10px;
+}
+
+.Calendario{
+  margin-left: 10px;
+}
+

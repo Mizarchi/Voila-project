@@ -16,11 +16,11 @@ import { AlmacenElement } from '../almacen/almacen.component'; // Importa la int
 export class FormAlmacenComponent {
   // Modelo de datos para el formulario
   nuevoAlmacen: AlmacenElement = {
-    id_almacen: '',
-    id_sede: '',
-    name: '',
-    direccion: '',
-    descripcion: ''
+    Almacen: '',
+    Sede: '',
+    Producto: '',
+    Direccion: '',
+    Descripcion: ''
   };
 
   constructor(public dialogRef: MatDialogRef<FormAlmacenComponent>) {}

@@ -1,101 +1,15 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <div class="header2">
-      <img class="logo" src="../../../assets/Logo_voila.png" alt="" />
-    </div>
+<mat-form-field>
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
 
-    <ul class="list-group list-group-flush">
-      <a routerLink="/dashboard" class="list-group-item list-group-item-action">
-        <div>
-          <img width="18px" src="../../../assets/table-alt.svg" alt="" />
-          <span>Dashboard</span>
-        </div>
 
-        <span class="badge text-bg-primary rounded-pill">2</span>
-      </a>
 
-      <a
-        routerLink="/dashboard/cita"
-        class="list-group-item list-group-item-action"
-      >
-        <div class="list-item">
-          <img width="18px" src="../../../assets/square-list.svg" alt="" />
-          <span>Citas</span>
-        </div>
-
-        <span class="badge text-bg-primary rounded-pill">2</span>
-      </a>
-
-      <a
-        routerLink="/dashboard/pagos"
-        class="list-group-item list-group-item-action"
-      >
-        <div class="list-item">
-          <img width="18px" src="../../../assets/circle-dollar.svg" alt="" />
-          <span>Pagos</span>
-        </div>
-
-        <span class="badge text-bg-primary rounded-pill">2</span>
-      </a>
-
-      <a
-        routerLink="/dashboard/inventario"
-        class="list-group-item list-group-item-action"
-      >
-        <div class="list-item">
-          <img width="18px" src="../../../assets/credit-card.svg" alt="" />
-          <span>Inventario</span>
-        </div>
-
-        <span class="badge text-bg-primary rounded-pill">2</span>
-      </a>
-
-      <a
-        routerLink="/dashboard/producto"
-        class="list-group-item list-group-item-action"
-      >
-        <div class="list-item">
-          <img width="18px" src="../../../assets/money-check.svg" alt="" />
-          <span>Productos</span>
-        </div>
-
-        <span class="badge text-bg-primary rounded-pill">2</span>
-      </a>
-
-      <a
-        routerLink="/dashboard/almacen"
-        class="list-group-item list-group-item-action"
-      >
-        <div class="list-item">
-          <img width="18px" src="../../../assets/inbox.svg" alt="" />
-          <span>Almacen</span>
-        </div>
-
-        <span class="badge text-bg-primary rounded-pill">2</span>
-      </a>
-    </ul>
-  </mat-drawer>
-
-  <div class="app-content">
-    <div class="dashboard">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        <img class="icon-menu" src="../../../assets/icon-menu.svg" />
-      </button>
-      <button class="menu" mat-button [matMenuTriggerFor]="menu">
-        <img class="icon" src="../../../assets/profile-circle.svg" /> Mizar T.
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>Perfil</button>
-        <button mat-menu-item>Configuración</button>
-        <button mat-menu-item routerLink="/login">Salir</button>
-      </mat-menu>
-    </div>
-  </div>
-
-  <div class="app-route">
-    <router-outlet />
-  </div>
-</mat-drawer-container>
-
+<div class="button">
+  <button mat-raised-button color="primary" (click)="openDialog()">Agregar</button>
+</div>
 
 

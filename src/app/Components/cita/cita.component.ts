@@ -5,14 +5,14 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 
 export interface CitaElement {
-  cita: string;
-  id_customer: string;
-  id_servicio: string;
-  id_tipo_servicio: string;
-  id_employee: number;
-  fecha: string;
-  hora_inicio: string;
-  hora_fin: string;
+  Cita: string;
+  Cliente: string;
+  Servicio: string;
+  Tipo: string;
+  Empleado: string;
+  Fecha: string;
+  Inicio: string;
+  Fin: string;
 }
 
 @Component({
@@ -22,19 +22,20 @@ export interface CitaElement {
   templateUrl: './cita.component.html',
   styleUrls: ['./cita.component.css'],
 })
+
 export class CitaComponent {
-  data = ['cita', 'id_customer', 'id_servicio', 'id_tipo_servicio', 'id_employee', 'fecha', 'hora_inicio', 'hora_fin'];
+  data = ['Cita', 'Cliente', 'Servicio', 'Tipo', 'Empleado', 'Fecha', 'Inicio', 'Fin'];
 
   citaData: CitaElement[] = [
     {
-      cita: '3',
-      id_customer: '5',
-      id_servicio: 'peluqueria',
-      id_tipo_servicio: 'corte y secado',
-      id_employee: 3,
-      fecha: '13-05-24',
-      hora_inicio: '1:00pm',
-      hora_fin: '3:30pm',
+      Cita: '1',
+      Cliente: 'carla',
+      Servicio: 'peluqueria',
+      Tipo: 'corte y secado',
+      Empleado: 'Maria jose',
+      Fecha: '13-05-24',
+      Inicio: '1:00pm',
+      Fin: '3:30pm',
     },
     // otros objetos...
   ];
