@@ -106,3 +106,14 @@ margin-top: 10px;
   margin-left: 10px;
 }
 
+.contenedorI{
+  display: flex;
+
+}
+
+.inicio{
+  margin-left: 30px;
+}
+.final{
+  margin-left: 62px;
+}
