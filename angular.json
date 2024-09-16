@@ -26,10 +26,10 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css",
-              "src/theme.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css"
+              "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css",
+              "src/theme.scss",
+              "src/styles.css"
             ],
             "scripts": []
           },
