@@ -7,14 +7,14 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AlmacenService } from '../almacen/almacen.service';
 
 export interface AlmacenElement {
-  createdAt:Date,
-  descripcion:String,
-  direccion:String,
-  id:Number,
-  idSede:Number,
-  nameAlmacen:String,
+  createdAt:string,
+  descripcion:string,
+  direccion:string,
+  id:number,
+  idSede:number,
+  nameAlmacen:string,
   status:boolean,
-  updatedAt:Date,
+  updatedAt:string,
 }
 
 @Component({

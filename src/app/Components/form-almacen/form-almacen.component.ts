@@ -5,6 +5,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AlmacenElement } from '../almacen/almacen.component'; // Importa la interfaz
+import { AlmacenService } from '../almacen/almacen.service'; // Importa el servicio
 
 @Component({
   selector: 'app-form-almacen',
@@ -14,25 +15,47 @@ import { AlmacenElement } from '../almacen/almacen.component'; // Importa la int
   styleUrls: ['./form-almacen.component.css']
 })
 export class FormAlmacenComponent {
-  // Modelo de datos para el formulario
   nuevoAlmacen: AlmacenElement = {
-    createdAt:new Date(),
-    descripcion:'',
-    direccion:'',
-    id:0,
-    idSede:0,
-    nameAlmacen:'',
-    status:false,
-    updatedAt:new Date(),
+    createdAt: this.formatDate(new Date()),  // Formatear la fecha al formato yyyy-MM-dd
+    descripcion: '',
+    direccion: '',
+    id: 0,
+    idSede: 0,
+    nameAlmacen: '',
+    status: false,
+    updatedAt: this.formatDate(new Date()),
   };
 
-  constructor(public dialogRef: MatDialogRef<FormAlmacenComponent>) {}
+  formatDate(date: Date): string {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');  // Mes de 2 dígitos
+    const day = date.getDate().toString().padStart(2, '0');  // Día de 2 dígitos
+    return `${year}-${month}-${day}`;
+  }
+
+  constructor(
+    public dialogRef: MatDialogRef<FormAlmacenComponent>,
+    private almacenService: AlmacenService // Inyecta el servicio
+  ) {}
+
+  ngOnInit() {
+    console.log(this.nuevoAlmacen.createdAt);  // Verifica que la fecha sea válida
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   guardar(): void {
-    this.dialogRef.close(this.nuevoAlmacen);
+    // Llama al servicio para guardar el nuevo almacén
+    this.almacenService.postAlmacen(this.nuevoAlmacen).subscribe({
+      next: (response: any) => {
+        console.log('Almacén guardado exitosamente:', response);
+        this.dialogRef.close(this.nuevoAlmacen);  // Cierra el diálogo y pasa el nuevo almacén
+      },
+      error: (error: any) => {
+        console.error('Error al guardar el almacén:', error);
+      }
+    });
   }
 }

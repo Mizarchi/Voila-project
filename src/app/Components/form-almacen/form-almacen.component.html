@@ -11,7 +11,7 @@
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <mat-label for="name">Producto:</mat-label>
+    <mat-label for="name">ID de Producto:</mat-label>
     <input matInput type="text" id="name" [(ngModel)]="nuevoAlmacen.id" name="name" required />
   </mat-form-field>
 
@@ -23,6 +23,14 @@
   <mat-form-field class="full-width">
     <mat-label for="descripcion">Descripción:</mat-label>
     <input matInput type="text" id="descripcion" [(ngModel)]="nuevoAlmacen.descripcion" name="descripcion" required />
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="fcreate">Fecha de Creación:</mat-label>
+    <input matInput type="date" id="fcreate" [(ngModel)]="nuevoAlmacen.createdAt" name="fcreate" required />
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label for="fupdate">Fecha de Actualización:</mat-label>
+    <input matInput type="date" id="fupdate" readonly [(ngModel)]="nuevoAlmacen.updatedAt" name="fupdate" required />
   </mat-form-field>
 </mat-dialog-content>
 
