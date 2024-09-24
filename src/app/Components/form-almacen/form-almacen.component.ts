@@ -51,11 +51,12 @@ export class FormAlmacenComponent {
     this.almacenService.postAlmacen(this.nuevoAlmacen).subscribe({
       next: (response: any) => {
         console.log('Almacén guardado exitosamente:', response);
-        this.dialogRef.close(this.nuevoAlmacen);  // Cierra el diálogo y pasa el nuevo almacén
+        window.location.reload();  // Recarga la página después de guardar el almacén
       },
       error: (error: any) => {
         console.error('Error al guardar el almacén:', error);
       }
     });
   }
+  
 }

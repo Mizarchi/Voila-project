@@ -35,4 +35,9 @@ export class AlmacenService {
   postAlmacen(nuevoAlmacen: AlmacenElement): Observable<AlmacenElement> {
     return this.http.post<AlmacenElement>(this.postAlmacenUrl, nuevoAlmacen);
   }
+
+  eliminarAlmacen(id: number): Observable<any> {
+    const url = `http://localhost:8080/api/sede/eliminarAlmacen`;
+    return this.http.put(url, { id });  // Envía el ID en el cuerpo
+  }
 }

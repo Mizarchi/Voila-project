@@ -62,13 +62,19 @@ const eliminarAlmacen = async (req, res) => {
 
 const almacenAll = async (req, res) => {
     try {
-        const almacen = await Almacen.findAll()
+        // Busca todos los almacenes donde el status sea true
+        const almacen = await Almacen.findAll({
+            where: {
+                status: true,  // Solo almacenes con status true
+            },
+        });
         return res.json({ almacen });
     } catch (error) {
         console.log('Error', error);
         return res.status(500).json({ message: 'Internal server error' });
     }
-}
+};
+
 
 const getalmacen = async (req, res) => {
     const { id } = req.params // Extrae el ID del parámetro de la solicitud

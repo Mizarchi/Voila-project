@@ -28,9 +28,11 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class DatatableAngular implements OnInit, OnChanges {
   @Input() displayedColumns!: string[];
-  @Input() rows: PeriodicElement[] = [];
+  @Input() rows: any[] = [];
+  @Input() columnNamesMap: { [key: string]: string } = {};
+  @Output() delete: EventEmitter<any> = new EventEmitter<any>();
 
-  dataSource = new MatTableDataSource<PeriodicElement>(this.rows);
+  dataSource = new MatTableDataSource<any>(this.rows);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -41,10 +43,12 @@ export class DatatableAngular implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['rows']) {
-      this.dataSource.data = this.rows;  // Actualiza el dataSource cuando rows cambie
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+    if (changes['rows'] && changes['rows'].currentValue) {
+      this.dataSource.data = [...this.rows];  // Clonamos el array
+      if (this.paginator && this.sort) {  // Verifica si el paginator y sort están definidos
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      }
     }
   }
 
@@ -53,15 +57,15 @@ export class DatatableAngular implements OnInit, OnChanges {
     this.dataSource.filter = value.trim().toLowerCase();
   };
 
-  public deleteElement(element: PeriodicElement) {
-    const index = this.dataSource.data.indexOf(element);
-    if (index >= 0) {
-      this.dataSource.data.splice(index, 1);
-      this.dataSource._updateChangeSubscription(); // Actualiza la tabla
+  deleteElement(element: any) {
+    this.delete.emit(element);  // Emite el elemento que se va a eliminar
+  }
+
+  // Función para formatear el valor de las celdas
+  public getFormattedValue(value: any, column: string): string {
+    if (column === 'status') {
+      return value ? 'Disponible' : 'No Disponible';
     }
+    return value;
   }
 }
-
-export interface PeriodicElement {
-}
-

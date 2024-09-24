@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DatatableAngular, PeriodicElement } from '../datataable-angular/datataable-angular.component';
+import { DatatableAngular,  } from '../datataable-angular/datataable-angular.component';
 import { FormProductoComponent } from '../form-producto/form-producto.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
