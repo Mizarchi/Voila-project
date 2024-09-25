@@ -2,43 +2,58 @@
 
 <mat-dialog-content>
   <mat-form-field class="full-width">
-    <mat-label for="id_cita">Cita:</mat-label>
-    <input matInput type="text" id="id_cita" [(ngModel)]="nuevaCita.Cita" name="id_cita" required />
+    <mat-label for="id_cita">ID:</mat-label>
+    <input matInput type="text" id="id_cita" [(ngModel)]="nuevaCita.id" name="id_cita" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <mat-label for="id_customer">Cliente:</mat-label>
-    <input matInput type="text" id="id_customer" [(ngModel)]="nuevaCita.Cliente" name="id_customer" required />
+    <mat-label for="id_cita">ID Sede:</mat-label>
+    <input matInput type="text" id="id_sede" [(ngModel)]="nuevaCita.idSede" name="id_sede" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <mat-label for="id_servicio">Servicio:</mat-label>
-    <input matInput type="text" id="id_servicio" [(ngModel)]="nuevaCita.Servicio" name="id_servicio" required />
+    <mat-label for="id_customer">ID Cliente:</mat-label>
+    <input matInput type="text" id="id_customer" [(ngModel)]="nuevaCita.idCliente" name="id_customer" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <mat-label for="id_tipo_servicio"> Tipo de Servicio:</mat-label>
-    <input matInput type="text" id="id_tipo_servicio" [(ngModel)]="nuevaCita.Tipo" name="id_tipo_servicio" required />
+    <mat-label for="id_servicio">ID Servicio:</mat-label>
+    <input matInput type="text" id="id_servicio" [(ngModel)]="nuevaCita.idServicio" name="id_servicio" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <mat-label for="id_employee">Empleado:</mat-label>
-    <input matInput type="text" id="id_employee" [(ngModel)]="nuevaCita.Empleado" name="id_employee" required />
+    <mat-label for="id_tipo_servicio"> ID Tipo de Servicio:</mat-label>
+    <input matInput type="text" id="id_tipo_servicio" [(ngModel)]="nuevaCita.idTipoServicio" name="id_tipo_servicio" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label for="id_employee">ID Empleado:</mat-label>
+    <input matInput type="text" id="id_employee" [(ngModel)]="nuevaCita.idEmpleado" name="id_employee" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label for="fecha">Fecha:</mat-label>
-    <input matInput type="date" id="fecha" [(ngModel)]="nuevaCita.Fecha" name="fecha" required />
+    <input matInput type="date" id="fecha" [(ngModel)]="nuevaCita.fecha" name="fecha" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label for="hora_inicio">Hora de Inicio:</mat-label>
-    <input matInput type="time" id="hora_inicio" [(ngModel)]="nuevaCita.Inicio" name="hora_inicio" required />
+    <input matInput type="time" id="hora_inicio" [(ngModel)]="nuevaCita.horaInicio" name="hora_inicio" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label for="hora_fin">Hora de Fin:</mat-label>
-    <input matInput type="time" id="hora_fin" [(ngModel)]="nuevaCita.Fin" name="hora_fin" required />
+    <input matInput type="time" id="hora_fin" [(ngModel)]="nuevaCita.horaFin" name="hora_fin" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label for="fcreate">Fecha de Creación:</mat-label>
+    <input matInput type="date" id="fcreate" [(ngModel)]="nuevaCita.createdAt" name="fcreate" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label for="fupdate">Fecha de Actualización:</mat-label>
+    <input matInput type="date" id="fupdate" readonly [(ngModel)]="nuevaCita.updatedAt" name="fupdate" required />
   </mat-form-field>
 </mat-dialog-content>
 
