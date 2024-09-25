@@ -39,7 +39,7 @@ export class CitaComponent {
     'idTipoServicio':'Tipo de Servicio',
     'idEmpleado':'ID Empleado',
     'fecha':'Fecha',
-    'horaInicio':'Inició:',
+    'horaInicio':'Inició',
     'horaFin':'Terminó',
     'status': 'Estado',
     'createdAt': 'Creado',
@@ -105,10 +105,8 @@ export class CitaComponent {
   }
   eliminarCita(id: number): void {
     this.citaService.eliminarCita(id).subscribe(() => {
-      // Filtrar los datos para eliminar el almacén eliminado de la tabla
-      this.cdr.markForCheck();
-      this.citaData = this.citaData.filter(cita => cita.id !== id);
-      this.updateDataSource();
+      // Volver a cargar los datos desde el servidor
+      this.ngOnInit(); // Este método debería obtener los datos actualizados
     });
   }
 }

@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { InventarioComponent } from '../inventario/inventario.component'; // Importa la interfaz
+import { InventarioElement, InventarioService } from '../inventario/inventario.service'; // Importa el servicio
 
 @Component({
   selector: 'app-form-inventario',
@@ -13,40 +15,51 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./form-inventario.component.css']
 })
 export class FormInventarioComponent {
-  inventario: string = '';
-  producto: string = '';
-  almacen: string = '';
-  descripcion: string = '';
-  presentacion: string = '';
-  cantidad: number = 0;
-  stock: number = 0;
-  entrada: string = '';
-  salida: string = '';
-  min_stock: number = 0;
+  nuevoInventario: InventarioElement = {
+    id	: 0,
+    idSede	: 0,
+    idAlmacen	: 0,
+    idProducto	:0,
+    descripcion	:'',
+    presentacion	: '',
+    stock	: '',
+    minStock	: '',
+    status: true,
+    createdAt: this.formatDate(new Date()),
+    updatedAt: this.formatDate(new Date()),
+  };
 
-  constructor(public dialogRef: MatDialogRef<FormInventarioComponent>) {}
+  formatDate(date: Date): string {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');  // Mes de 2 dígitos
+    const day = date.getDate().toString().padStart(2, '0');  // Día de 2 dígitos
+    return `${year}-${month}-${day}`;
+  }
 
-  onSaveClick(): void {
-    const newData = {
-      inventario: this.inventario,
-      producto: this.producto,
-      almacen: this.almacen,
-      descripcion: this.descripcion,
-      presentacion: this.presentacion,
-      cantidad: this.cantidad,
-      stock: this.stock,
-      entrada: this.entrada,
-      salida: this.salida,
-      min_stock: this.min_stock,
-    };
+  constructor(
+    public dialogRef: MatDialogRef<FormInventarioComponent>,
+    private inventarioService: InventarioService // Inyecta el servicio
+  ) {}
 
-    this.dialogRef.close(newData); // Devuelve los datos al componente padre
+  ngOnInit() {
+    console.log(this.nuevoInventario.createdAt);  // Verifica que la fecha sea válida
   }
 
   onNoClick(): void {
-    this.dialogRef.close(); // Cierra el diálogo sin devolver datos
+    this.dialogRef.close();
   }
-}
 
+  guardar(): void {
+    // Llama al servicio para guardar el nuevo almacén
+    this.inventarioService.postInventario(this.nuevoInventario).subscribe({
+      next: (response: any) => {
+        console.log('Inventario guardado exitosamente:', response);
+        window.location.reload();  // Recarga la página después de guardar el almacén
+      },
+      error: (error: any) => {
+        console.error('Error al guardar el inventario:', error);
+      }
+    });
+  }
   
-
+}

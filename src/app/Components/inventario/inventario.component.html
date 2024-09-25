@@ -1,5 +1,9 @@
-<app-datataable-angular [displayedColumns]="data" [rows]="rows"></app-datataable-angular>
-
+<app-datataable-angular 
+  [displayedColumns]="data.concat('Eliminar')" 
+  [rows]="inventarioData" 
+  [columnNamesMap]="columnNamesMap"
+  (delete)="onDelete($event)"> <!-- Escuchamos el evento delete aquí -->
+</app-datataable-angular>
 <div class="button">
   <button mat-raised-button color="primary" (click)="openDialog()">Agregar</button>
 </div>

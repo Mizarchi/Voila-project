@@ -1,57 +1,54 @@
 <h1 mat-dialog-title>Formulario de Inventario</h1>
 <mat-dialog-content>
+
   <mat-form-field class="full-width">
-    <mat-label>Inventario</mat-label>
-    <input matInput [(ngModel)]="inventario" required />
+    <mat-label>ID Sede</mat-label>
+    <input matInput [(ngModel)]="nuevoInventario.idSede" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <mat-label>Producto</mat-label>
-    <input matInput [(ngModel)]="producto" required />
+    <mat-label>ID Almacén</mat-label>
+    <input matInput [(ngModel)]="nuevoInventario.idAlmacen" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
-    <mat-label>Almacén</mat-label>
-    <input matInput [(ngModel)]="almacen" required />
+    <mat-label>ID Producto</mat-label>
+    <input matInput [(ngModel)]="nuevoInventario.idProducto" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Descripción</mat-label>
-    <input matInput [(ngModel)]="descripcion" required />
+    <input matInput [(ngModel)]="nuevoInventario.descripcion" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Presentación</mat-label>
-    <input matInput [(ngModel)]="presentacion" required />
+    <input matInput [(ngModel)]="nuevoInventario.presentacion" required />
   </mat-form-field>
 
-  <mat-form-field class="full-width">
-    <mat-label>Cantidad</mat-label>
-    <input matInput type="number" [(ngModel)]="cantidad" required />
-  </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Stock</mat-label>
-    <input matInput type="number" [(ngModel)]="stock" required />
-  </mat-form-field>
-
-  <mat-form-field class="full-width">
-    <mat-label>Entrada</mat-label>
-    <input matInput [(ngModel)]="entrada" required />
-  </mat-form-field>
-
-  <mat-form-field class="full-width">
-    <mat-label>Salida</mat-label>
-    <input matInput [(ngModel)]="salida" required />
+    <input matInput type="number" [(ngModel)]="nuevoInventario.stock" required />
   </mat-form-field>
 
   <mat-form-field class="full-width">
     <mat-label>Min Stock</mat-label>
-    <input matInput type="number" [(ngModel)]="min_stock" required />
+    <input matInput type="number" [(ngModel)]="nuevoInventario.minStock" required />
   </mat-form-field>
+
+<mat-form-field class="full-width">
+  <mat-label for="fcreate">Fecha de Creación:</mat-label>
+  <input matInput type="date" id="fcreate" [(ngModel)]="nuevoInventario.createdAt" name="fcreate" required />
+</mat-form-field>
+
+<mat-form-field class="full-width">
+  <mat-label for="fupdate">Fecha de Actualización:</mat-label>
+  <input matInput type="date" id="fupdate" readonly [(ngModel)]="nuevoInventario.updatedAt" name="fupdate" required />
+</mat-form-field>
 </mat-dialog-content>
 
 <mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Atras</button>
-  <button mat-raised-button color="primary" (click)="onSaveClick()">Guardar</button>
+  <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
 </mat-dialog-actions>
