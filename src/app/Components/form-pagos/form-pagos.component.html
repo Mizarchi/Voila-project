@@ -2,37 +2,37 @@
 
 <mat-dialog-content>
   <mat-form-field class="full-width">
-    <mat-label for="id_pago">Pago:</mat-label>
-    <input matInput [(ngModel)]="id_pago" type="text" id="id_pago" name="id_pago" required />
+    <mat-label for="id_cita">ID Cita (Deje en 0 (cero) si no se trata del pago de una cita)</mat-label>
+    <input matInput [(ngModel)]="nuevoPago.idCita" type="number" id="id_cita" name="id_cita" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="id_cita">Cita:</mat-label>
-    <input matInput [(ngModel)]="id_cita" type="text" id="id_cita" name="id_cita" required />
+    <mat-label for="id_venta">ID Venta (Deje en 0 (cero) si no se trata del pago de una venta)</mat-label>
+    <input matInput [(ngModel)]="nuevoPago.idVenta" type="text" id="id_venta" name="id_venta" required/>
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="id_venta">Venta:</mat-label>
-    <input matInput [(ngModel)]="id_venta" type="text" id="id_venta" name="id_venta" required />
+    <mat-label for="id_prestamo">Préstamo al Empleado (Ingrese el ID del empleado al que se le dio el préstamo)</mat-label>
+    <input matInput [(ngModel)]="nuevoPago.idEmpleadoPrestamo" type="text" id="id_prestamo" name="id_prestamo" required  />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="monto_total"> Total:</mat-label>
-    <input matInput [(ngModel)]="monto_total" type="number" id="monto_total" name="monto_total" required />
+    <mat-label for="monto_total">Monto Total:</mat-label>
+    <input matInput [(ngModel)]="nuevoPago.montoTotal" type="number" id="monto_total" name="monto_total" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="tipo_moneda">Moneda:</mat-label>
-    <input matInput [(ngModel)]="tipo_moneda" type="text" id="tipo_moneda" name="tipo_moneda" required />
+    <mat-label for="fcreate">Fecha de Creación:</mat-label>
+    <input matInput [(ngModel)]="nuevoPago.createdAt" type="text" id="fcreate" name="fcreate" required readonly/>
   </mat-form-field>
-  
+
   <mat-form-field class="full-width">
-    <mat-label for="descripcion">Descripción:</mat-label>
-    <input matInput [(ngModel)]="descripcion" type="text" id="descripcion" name="descripcion" required />
+    <mat-label for="fupdate">Fecha de Actualización:</mat-label>
+    <input matInput [(ngModel)]="nuevoPago.createdAt" type="text" id="fupdate" name="fupdate" required readonly/>
   </mat-form-field>
 </mat-dialog-content>
   
 <mat-dialog-actions>
   <button mat-button color="primary" (click)="onNoClick()">Atras</button>
-  <button mat-raised-button color="primary" (click)="onSaveClick()" cdkFocusInitial>Guardar</button>
+  <button mat-raised-button color="primary" (click)="guardar()" cdkFocusInitial>Guardar</button>
 </mat-dialog-actions>

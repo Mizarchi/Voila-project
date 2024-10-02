@@ -64,7 +64,7 @@ export class DatatableAngular implements OnInit, OnChanges {
   // Función para formatear el valor de las celdas
   public getFormattedValue(value: any, column: string): string {
     if (column === 'status') {
-      return value ? 'Disponible' : 'No Disponible';
+      return value ? 'Activo' : 'Inactivo';
     }
     return value;
   }

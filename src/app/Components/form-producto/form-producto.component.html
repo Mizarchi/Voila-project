@@ -2,67 +2,73 @@
 
 <mat-dialog-content>
   <mat-form-field class="full-width">
-    <mat-label for="id_producto">Producto:</mat-label>
-    <input matInput [(ngModel)]="id_producto" type="text" id="id_producto" name="id_producto" required />
+    <mat-label for="name">Nombre</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.name" type="text" id="name" name="name" required />
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label for="descripcion">Descripción</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.descripcion" type="text" id="descripcion" descripcion="descripcion" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="name">Nombre:</mat-label>
-    <input matInput [(ngModel)]="name" type="text" id="name" name="name" required />
+    <mat-label for="id_marca">ID Marca</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.idMarca" type="number" id="id_marca" id_marca="id_marca" required />
+  </mat-form-field>
+  
+  
+  <mat-form-field class="full-width">
+    <mat-label for="id_modelo">ID Modelo</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.idModelo" type="number" id="id_modelo" name="id_modelo" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="descripcion">Descripción:</mat-label>
-    <input matInput [(ngModel)]="descripcion" type="text" id="descripcion" name="descripcion" required />
+    <mat-label for="presentacion">Presentación</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.presentacion" type="text" id="presentacion" name="presentacion" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="modelo">Modelo:</mat-label>
-    <input matInput [(ngModel)]="modelo" type="text" id="modelo" name="modelo" required />
+    <mat-label for="unidad">Unidad</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.unidad" type="text" id="unidad" name="unidad" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="marca">Marca:</mat-label>
-    <input matInput [(ngModel)]="marca" type="text" id="marca" name="marca" required />
+    <mat-label for="medida">Medida</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.medida" type="text" id="medida" name="medida" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="presentacion">Presentación:</mat-label>
-    <input matInput [(ngModel)]="presentacion" type="text" id="presentacion" name="presentacion" required />
+    <mat-label for="cantidad">Cantidad</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.cantidad" type="number" id="cantidad" name="cantidad" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="unidad">Unidad:</mat-label>
-    <input matInput [(ngModel)]="unidad" type="number" id="unidad" name="unidad" required />
+    <mat-label for="observacion">Observación</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.observacion" type="text" id="observacion" name="observacion" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="medida">Medida:</mat-label>
-    <input matInput [(ngModel)]="medida" type="number" id="medida" name="medida" required />
+    <mat-label for="precio">Precio</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.precio" type="text" id="precio" name="precio" required />
   </mat-form-field>
   
   <mat-form-field class="full-width">
-    <mat-label for="cantidad">Cantidad:</mat-label>
-    <input matInput [(ngModel)]="cantidad" type="number" id="cantidad" name="cantidad" required />
+    <mat-label for="id_moneda">ID Moneda</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.idMoneda" type="number" id="id_moneda" name="id_moneda" required />
   </mat-form-field>
-  
+
   <mat-form-field class="full-width">
-    <mat-label for="observacion">Observación:</mat-label>
-    <input matInput [(ngModel)]="observacion" type="text" id="observacion" name="observacion" required />
+    <mat-label for="fcreate">Fecha de Creación:</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.createdAt" type="text" id="fcreate" name="fcreate" required readonly/>
   </mat-form-field>
-  
+
   <mat-form-field class="full-width">
-    <mat-label for="precio">Precio:</mat-label>
-    <input matInput [(ngModel)]="precio" type="text" id="precio" name="precio" required />
-  </mat-form-field>
-  
-  <mat-form-field class="full-width">
-    <mat-label for="moneda">Moneda:</mat-label>
-    <input matInput [(ngModel)]="moneda" type="text" id="moneda" name="moneda" required />
+    <mat-label for="fupdate">Fecha de Actualización:</mat-label>
+    <input matInput [(ngModel)]="nuevoProducto.createdAt" type="text" id="fupdate" name="fupdate" required readonly/>
   </mat-form-field>
 </mat-dialog-content>
   
 <mat-dialog-actions>
   <button mat-button color="primary" (click)="onNoClick()">Atras</button>
-  <button mat-raised-button color="primary" (click)="onSaveClick()" cdkFocusInitial>Guardar</button>
+  <button mat-raised-button color="primary" (click)="guardar()" cdkFocusInitial>Guardar</button>
 </mat-dialog-actions>

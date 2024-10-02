@@ -1,64 +1,114 @@
-import { Component } from '@angular/core';
-import { DatatableAngular,  } from '../datataable-angular/datataable-angular.component';
-import { FormProductoComponent } from '../form-producto/form-producto.component';
+import { Component, ChangeDetectorRef } from '@angular/core';
+import { DatatableAngular } from '../datataable-angular/datataable-angular.component';
+import { FormProductoComponent} from '../form-producto/form-producto.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableDataSource } from '@angular/material/table';
+import { ProductoService } from './productos.service';
+import { MatIconModule } from '@angular/material/icon';
 
 export interface ProductoElement {
-  id_producto: string;
-  name: string;
-  descripcion: string;
-  modelo: string;
-  marca: string;
-  presentacion: string;
-  unidad: number;
-  medida: number;
-  cantidad: number;
-  observacion: string;
-  precio: string;
-  moneda: string;
+  id	: number,
+  name	: string,
+  descripcion	: string,
+  idMarca	:number,
+  idModelo	:number,
+  presentacion:string,
+  unidad:number,
+  medida:string,
+  cantidad:number,
+  observacion:string,
+  precio:string,
+  idMoneda:number,
+  status	: boolean,
+  createdAt	: string,
+  updatedAt : string,
 }
 
 @Component({
-  selector: 'app-productos',
+  selector: 'app-producto',
   standalone: true,
-  imports: [DatatableAngular, MatDialogModule, MatButtonModule],
+  imports: [MatIconModule, MatButtonModule, MatDialogModule, DatatableAngular],
   templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.css']
+  styleUrls: ['./productos.component.css'],
 })
 export class ProductosComponent {
-  data = ['id_producto', 'name', 'descripcion', 'modelo', 'marca', 'presentacion', 'unidad', 'medida', 'cantidad', 'observacion', 'precio', 'moneda'];
+  data: string[] = ['id', 'name', 'descripcion', 'idMarca', 'idModelo','presentacion','unidad','cantidad','observacion','precio','idMoneda','status'];
+  columnNamesMap = {
+    'id': 'ID',
+    'name': 'Nombre',
+    'descripcion':'Descripción',
+    'idMarca':'ID Marca',
+    'idModelo':'ID Modelo',
+    'presentacion':'Presentación',
+    'unidad':'Unidad',
+    'cantidad':'Cantidad',
+    'observacion':'Observación',
+    'precio':'Precio',
+    'idMoneda':'ID Moneda',
+    'status': 'Estado',
+  };
 
-  productoData: ProductoElement[] = [
-    {
-      id_producto: '001',
-      name: 'producto',
-      descripcion: 'color rouse',
-      modelo: 'beauty nails',
-      marca: 'Beaty nails',
-      presentacion: 'rojo',
-      unidad: 12,
-      medida: 3,
-      cantidad: 12,
-      observacion: 'color rojo',
-      precio: '$5',
-      moneda: 'USD',
-    },
-    // otros objetos...
-  ];
+  productoData: ProductoElement[] = [];
+  dataSource = new MatTableDataSource(this.productoData);
 
-  rows: ProductoElement[] = [...this.productoData];
+  constructor(
+    public dialog: MatDialog,
+    private cdr: ChangeDetectorRef,
+    private productoService: ProductoService
+  ) {}
 
-  constructor(public dialog: MatDialog) {}
+  ngOnInit() {
+    this.productoService.getProducto().subscribe((response) => {
+      this.productoData = this.formatDates(response.producto);
+      this.updateDataSource();
+    });
+  }
+
+  formatDates(data: ProductoElement[]): ProductoElement[] {
+    return data.map(item => ({
+      ...item,
+      createdAt: this.customDateFormat(item.createdAt),
+      updatedAt: this.customDateFormat(item.updatedAt),
+    }));
+  }
+
+  customDateFormat(date: string): string {
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'short',
+      day: '2-digit',
+    };
+    return new Date(date).toLocaleDateString('es-ES', options);
+  }
+
+  updateDataSource() {
+    this.dataSource.data = [...this.productoData];
+    this.cdr.detectChanges();
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(FormProductoComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.productoData.push(result);  // Agrega el nuevo elemento al array de productos
-        this.rows = [...this.productoData];  // Actualiza los datos para la tabla
+        this.productoData.push(result);
+        this.dataSource = new MatTableDataSource(this.productoData);
+        this.cdr.detectChanges();
+      } else {
+        console.log('El diálogo se cerró sin guardar datos.');
       }
+    });
+  }
+  onDelete(element: any): void {
+    if (element && element.id) {
+      this.eliminarProducto(element.id);  // Llamamos a eliminarAlmacen con el ID
+    }
+  }
+  eliminarProducto(id: number): void {
+    this.productoService.eliminarProducto(id).subscribe(() => {
+      // Volver a cargar los datos desde el servidor
+      this.ngOnInit(); // Este método debería obtener los datos actualizados
     });
   }
 }

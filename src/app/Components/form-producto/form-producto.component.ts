@@ -4,6 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ProductosComponent } from '../productos/productos.component'; // Importa la interfaz
+import { ProductoElement, ProductoService } from '../productos/productos.service'; // Importa el servicio
 
 @Component({
   selector: 'app-form-producto',
@@ -13,41 +15,55 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./form-producto.component.css']
 })
 export class FormProductoComponent {
-  id_producto: string = '';
-  name: string = '';
-  descripcion: string = '';
-  modelo: string = '';
-  marca: string = '';
-  presentacion: string = '';
-  unidad: number = 0;
-  medida: number = 0;
-  cantidad: number = 0;
-  observacion: string = '';
-  precio: string = '';
-  moneda: string = '';
+  nuevoProducto: ProductoElement = {
+    id	: 0,
+    name	: '',
+    descripcion	: '',
+    idMarca	:0,
+    idModelo	:0,
+    presentacion:'',
+    unidad:0,
+    medida:'',
+    cantidad:0,
+    observacion:'',
+    precio:'',
+    idMoneda:0,
+    status: true,
+    createdAt: this.formatDate(new Date()),
+    updatedAt: this.formatDate(new Date()),
+  };
 
-  constructor(public dialogRef: MatDialogRef<FormProductoComponent>) {}
+  formatDate(date: Date): string {
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');  // Mes de 2 dígitos
+    const day = date.getDate().toString().padStart(2, '0');  // Día de 2 dígitos
+    return `${year}-${month}-${day}`;
+  }
 
-  onSaveClick(): void {
-    const newProducto = {
-      id_producto: this.id_producto,
-      name: this.name,
-      descripcion: this.descripcion,
-      modelo: this.modelo,
-      marca: this.marca,
-      presentacion: this.presentacion,
-      unidad: this.unidad,
-      medida: this.medida,
-      cantidad: this.cantidad,
-      observacion: this.observacion,
-      precio: this.precio,
-      moneda: this.moneda,
-    };
+  constructor(
+    public dialogRef: MatDialogRef<FormProductoComponent>,
+    private productoService: ProductoService // Inyecta el servicio
+  ) {}
 
-    this.dialogRef.close(newProducto); // Devuelve los datos al componente padre
+  ngOnInit() {
+    console.log(this.nuevoProducto.createdAt);  // Verifica que la fecha sea válida
   }
 
   onNoClick(): void {
-    this.dialogRef.close(); // Cierra el diálogo sin devolver datos
+    this.dialogRef.close();
   }
+
+  guardar(): void {
+    // Llama al servicio para guardar el nuevo almacén
+    this.productoService.postProducto(this.nuevoProducto).subscribe({
+      next: (response: any) => {
+        console.log('Producto guardado exitosamente:', response);
+        window.location.reload();  // Recarga la página después de guardar el almacén
+      },
+      error: (error: any) => {
+        console.error('Error al guardar el producto:', error);
+      }
+    });
+  }
+  
 }
